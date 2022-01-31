@@ -1,0 +1,14 @@
+{% extends "profiles/_base.html" %}
+
+{% block content %}
+<div class="row">
+	<form action="" method="POST">
+		{% csrf_token %}
+			<input type="text" name="username" placeholder="Ваш логин" class="form-control" />
+			<input type="password" name="password" placeholder="Ваш пароль" class="form-control" />
+
+{# 			<input type="submit" name="Вход"> #}
+			<button>Вход</button>
+	</form>
+</div>
+{% endblock content %}
