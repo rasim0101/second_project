@@ -4,7 +4,6 @@
 	<div class="row">
 		<h3>{{profile.name}}</h3>
 		<h4>username: {{user.username}}</h4>
-		<a href="{% url 'logout_page' %}">Выход</a>
-		<img width="150" src="{{profile.profile_photo.url}}">
+		<img class="profile_picture" src="{{profile.profile_photo.url}}">
 	</div>
 {% endblock content %}

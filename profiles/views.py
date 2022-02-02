@@ -20,6 +20,10 @@ def my_profile(request):
 
 
 def login_page(request):
+	""" Страница для входа """
+	# для перекидывания аутентифицированного пользователя
+	if request.user.is_authenticated:
+		return redirect('my_profile')
 	if request.method == 'POST':
 		username = request.POST.get('username')
 		password = request.POST.get('password')
@@ -30,5 +34,5 @@ def login_page(request):
 	return render(request, 'profiles/login_page.html')
 
 def logout_page(request):
-	logout(user)
+	logout(request)
 	return redirect('movie_list')
