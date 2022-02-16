@@ -1,0 +1,10 @@
+{% extends 'profiles/_base.html' %}
+
+{% block content %}
+{% for movie in movies %}
+<div>
+	{{movie}}
+</div>
+	
+{% endfor %}
+{% endblock content %}

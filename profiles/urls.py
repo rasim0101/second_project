@@ -24,6 +24,7 @@ urlpatterns = [
     path('', views.movie_list, name='movie_list'),
     path('me', views.my_profile, name='my_profile'),
     path('login_page', views.login_page, name='login_page'),
-    path('logout_page', views.logout_page, name='logout_page')
+    path('logout_page', views.logout_page, name='logout_page'),
+    path('/category/<id>', views.category, name='category'),
 ]
 

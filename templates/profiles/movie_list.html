@@ -3,6 +3,13 @@
 {% block content %}
 <div class="row">
 	<h2>Пока</h2>
+	<ul>
+		{% for c in categories %}
+		<li>
+			<a href="{% url 'category' c.id %}">{{c.name}}</a>
+		</li>
+		{% endfor %}
+	</ul>
 	{% for m in movies %}
 	<li>
 		{{m.name}}
