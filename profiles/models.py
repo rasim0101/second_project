@@ -25,10 +25,19 @@ class Profile(models.Model):
 		verbose_name='Профиль'
 		verbose_name_plural='Профили'
 
+
+class Category(models.Model):
+	name = models.CharField(max_length=100)
+
+	def __str__(self):
+		return self.name
+
+
 class Movie(models.Model):
 	name = models.CharField(max_length=60, verbose_name='Название фильма')
 	description = models.TextField(verbose_name='Краткий сюжет')
 	release_date = models.DateField(verbose_name='Дата выхода')
+	category = models.ForeignKey(Category, on_delete=models.CASCADE, null=True)
 
 	def __str__(self):
 		return f"{self.name} {self.release_date}"
