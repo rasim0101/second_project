@@ -10,15 +10,33 @@
 		</li>
 		{% endfor %}
 	</ul>
+	<ul>
 	{% for m in movies %}
-	<li>
+
+		<li>
 		{{m.name}}
-		<ul>
-			{% for image in m.movieimage_set.all %}
-				<li><img class="movieimage" src="{{image.file.url}}"></li>
-			{% endfor %}
-		</ul>
-	</li>
+				<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+				  <div class="carousel-inner">
+					{% for image in m.movieimage_set.all %} 
+						{% with forloop.counter0 as i %}
+						    <div class="carousel-item {%if i is 0 %}active{% endif %}" ata-bs-interval="100">
+					      		<img src="{{image.file.url}}" class="d-block w-100" alt="...">
+					    	</div>
+					    {% endwith %}
+					{% endfor %}
+				  </div>
+				  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+				    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				    <span class="visually-hidden">Previous</span>
+				  </button>
+				  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+				    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+				    <span class="visually-hidden">Next</span>
+				  </button>
+				</div>
+{# 				<li><img class="movieimage" src="{{image.file.url}}"></li> #}
+		</li>
 	{% endfor %}
+	</ul>
 </div>
 {% endblock content %}

@@ -48,3 +48,4 @@ def category(request,id):
 		'movies': movies
 	}
 	return render(request, 'profiles/category.html', context)
+
