@@ -1,0 +1,18 @@
+{% extends "_base.html" %}
+{% load static %}
+{% block content %}
+<div class="row">
+	<h2>Пока</h2>
+	<ul>
+		{% for c in comments %}
+			<li>
+					{{c.text}}
+				<p>
+					{{c.blog.title}}
+				</p>
+			</li>
+		<hr>
+		{% endfor %}
+	</ul>
+</div>
+{% endblock content %}
