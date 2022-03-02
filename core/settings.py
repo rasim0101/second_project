@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "debug_toolbar",
     'profiles',
     'blogs', 
+    'ckeditor',
 ]
 
 MIDDLEWARE = [

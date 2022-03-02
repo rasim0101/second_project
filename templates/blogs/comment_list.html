@@ -6,7 +6,7 @@
 	<ul>
 		{% for c in comments %}
 			<li>
-					{{c.text}}
+					<a href="{{c.get_absolute_url}}">{{c.text}}</a>
 				<p>
 					{{c.blog.title}}
 				</p>

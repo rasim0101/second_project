@@ -6,7 +6,7 @@
 	<ul>
 		{% for b in blogs %}
 			<li>
-					{{b.title}}
+					<a href="{{b.get_absolute_url}}">{{b.title}}</a>
 					{% for c in b.comment_set.all %}
 						<p>{{c.text}}</p>
 					{% endfor %}
